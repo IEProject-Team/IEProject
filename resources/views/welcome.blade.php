@@ -45,7 +45,7 @@ social network...
 				
 				<div class="form-group">
 					<label for="password"> Your password </label>
-					<input class="form-control" type="text" name="password" id="password">
+					<input class="form-control" type="password" name="password" id="password">
 				</div>
 				
 				<button type="submit" class="btn btn-primary">Submit  </button>
