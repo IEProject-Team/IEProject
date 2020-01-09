@@ -2,7 +2,7 @@
 
 @section('title')
 
-This is the title
+social network...
 @endsection
 
 @section('content')
