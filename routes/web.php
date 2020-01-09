@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 	
-});
+})->name('home');
 
 Route::get('/user/{id}', function ($id) {
     
@@ -35,7 +35,8 @@ Route:: post('/signin',[
 
 Route::get('/dashboard', [
     'uses' => 'UserController@getDashboard',
-    'as' => 'dashboard'
+    'as' => 'dashboard',
+    'middleware' => 'auth'
 ]);
 ?>
     
