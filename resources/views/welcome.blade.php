@@ -42,9 +42,13 @@ social network...
 				<input type="hidden" name="_token" value="{{Session :: token()}}">
 			</form>
 		 </div>
-		 
+		
 		 <div class="col-md-6">
-			
+			@if (session('message'))
+    			<div class="alert alert-danger">
+       				 {{ session('message') }}
+    			</div>
+			@endif
 			<h3>Sign in </h3>
 			
 			<form action="{{ route('signin') }}" method="post">
