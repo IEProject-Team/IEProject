@@ -1,8 +1,12 @@
 <div class="media">
   <div class="media-body">
-  <hr>
-    <h4 class="Media-heading">Id:<a href="#">{{$search_result->getID()}}</a></h4>
-    <h4 class="Media-heading">First Name:<a href="#">{{$search_result->getFirstName()}}</a></h4>
-    <h4 class="Media-heading">Email:<a href="#">{{$search_result->getEmail()}}</a></h4>
+  <br>
+    <h5 class="Media-heading">Id : <a href="#">{{$search_result->getID()}}</a></h5>
+    <h5 class="Media-heading">First Name : <a href="#">{{$search_result->getFirstName()}}</a></h5>
+    <h5 class="Media-heading">Email : <a href="#">{{$search_result->getEmail()}}</a></h5>
+    <form class="form-inline" action="#">
+      <button class="btn btn-primary btn-block" type="submit">Follow</button>
+    </form>
+    <hr>
    </div>
 </div>
