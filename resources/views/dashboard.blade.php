@@ -23,10 +23,11 @@
         <header>
             <h3>Yours and others posts</h3>
         </header>
+        @foreach($posts as $post)
         <article class="post">
-            <p>Example of 1th post</p>
+            <p>{{ $post->body }}</p>
             <div class="info">
-                Posted by me on 9 jan 2020
+                Posted by {{ $post->user->first_name}} on {{ $post->created_at}}
             </div>
             <div class="interaction">
                 <a href="#">Like</a> |
@@ -35,18 +36,7 @@
                 <a href="#">Delete</a>
             </div>
         </article>
-        <article class="post">
-            <p>Example of 1th post</p>
-            <div class="info">
-                Posted by me on 9 jan 2020
-            </div>
-            <div class="interaction">
-                <a href="#">Like</a> |
-                <a href="#">Dislike</a> |
-                <a href="#">Edit</a> |
-                <a href="#">Delete</a>
-            </div>
-        </article>
+        @endforeach
     </div>
 </section>
 
