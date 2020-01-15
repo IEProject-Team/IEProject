@@ -1,13 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-<section class="row new-post">
-    <div class="col-m-6 col-md-offset-3">
 @include('includes.dashboardNavigation')
-</div>
-</section>
 <section class="row new-post">
-    <div class="col-m-6 col-md-offset-3">
+    <div class="col-md-12 col-md-offset-3">
         <header>
             <h3>What do you have to say ?! </h3>
         </header>
@@ -16,7 +12,7 @@
                 <textarea class="form-control" name="body" id="new-post" rows="6"
                     placeholder="Write something to post!"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Send post</button>
+            <button type="submit" class="btn btn-primary btn-block">Send post</button>
             <input type="hidden" value="{{ Session::token() }}" name="_token">
         </form>
     </div>
