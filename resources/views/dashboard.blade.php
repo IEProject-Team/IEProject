@@ -3,6 +3,11 @@
 @section('content')
 <section class="row new-post">
     <div class="col-m-6 col-md-offset-3">
+@include('includes.dashboardNavigation')
+</div>
+</section>
+<section class="row new-post">
+    <div class="col-m-6 col-md-offset-3">
         <header>
             <h3>What do you have to say ?! </h3>
         </header>
