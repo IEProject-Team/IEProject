@@ -44,7 +44,7 @@ social network...
 					<input class="form-control" type="password" name="password" id="password">
 				</div>
 				
-				<button type="submit" class="btn btn-primary">Submit  </button>
+				<button type="submit" class="btn btn-lg" style="color:white; background-color:#a21b24;">Sign up  </button>
 				<input type="hidden" name="_token" value="{{Session :: token()}}">
 			</form>
 		 </div>
@@ -64,7 +64,7 @@ social network...
 					<input class="form-control" type="password" name="password" id="password">
 				</div>
 				
-				<button type="submit" class="btn btn-primary">Submit  </button>
+				<button type="submit" class="btn btn-lg" style="color:white; background-color:#a21b24;">Sign in  </button>
 				<input type="hidden" name="_token" value="{{Session :: token()}}">
 
 			</form>
