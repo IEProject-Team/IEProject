@@ -17,6 +17,12 @@ social network...
 		 </div>
 	 </div>
 	@endif
+
+	@if (session('message'))
+    			<div class="alert alert-danger">
+       				 {{ session('message') }}
+    			</div>
+			@endif
 	<div class ="row">
 		 <div class="col-md-6">
 		 			
@@ -44,11 +50,6 @@ social network...
 		 </div>
 		
 		 <div class="col-md-6">
-			@if (session('message'))
-    			<div class="alert alert-danger">
-       				 {{ session('message') }}
-    			</div>
-			@endif
 			<h3>Sign in </h3>
 			
 			<form action="{{ route('signin') }}" method="post">
