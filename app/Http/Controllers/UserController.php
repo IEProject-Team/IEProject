@@ -9,9 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller{
     
-    public function getDashboard(){
-        return view('dashboard');
-    }
     public function postSignUp(Request $request){
 
         $this->Validate($request,[
@@ -47,5 +44,3 @@ class UserController extends Controller{
         }
     }
 }
-
-
