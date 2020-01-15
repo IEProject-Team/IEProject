@@ -42,12 +42,19 @@ Route::get('/dashboard', [
 
 Route::post('/createpost', [
     'uses'=> 'PostController@postCreatePost',
-    'as' => 'post.create'
+    'as' => 'post.create',
+    'middleware' => 'auth'
 ]);
 
 Route::get('/search', [
     'uses' => 'SearchController@getResults',
     'as' => 'search.results'
+]);
+
+Route::get('/delete-post/{post_id}', [
+    'uses'=> 'PostController@getDeletePost',
+    'as' => 'post.delete',
+    'middleware' => 'auth'
 ]);
 
 ?>
