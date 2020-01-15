@@ -44,4 +44,10 @@ Route::post('/createpost', [
     'uses'=> 'PostController@postCreatePost',
     'as' => 'post.create'
 ]);
+
+Route::get('/search', [
+    'uses' => 'SearchController@getResults',
+    'as' => 'search.results'
+]);
+
 ?>

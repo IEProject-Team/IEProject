@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="{{URL::to('src/css/main.css')}}">
     </head>
     <body>
-	 @include('includes.header')
+    @include('includes.header')
         <div class="container">
             @yield('content')
         </div>
