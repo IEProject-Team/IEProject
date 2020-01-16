@@ -53,7 +53,8 @@ Route::post('/createpost', [
 
 Route::get('/search', [
     'uses' => 'SearchController@getResults',
-    'as' => 'search.results'
+    'as' => 'search.results',
+    'middleware' => 'auth'
 ]);
 
 Route::get('/delete-post/{post_id}', [
