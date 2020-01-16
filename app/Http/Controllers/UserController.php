@@ -40,7 +40,7 @@ class UserController extends Controller{
         if( Auth::attempt(['email' => $request['email'], 'password' => $request['password']]))
             return redirect()->route('dashboard');
         else{
-            return redirect()->route('home')->with(['message' =>'Sign in info is incorrect ! ']);
+            return redirect()->route('home')->with(['error' =>'Sign in info is incorrect ! ']);
         }
     }
 

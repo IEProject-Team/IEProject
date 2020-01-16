@@ -34,7 +34,12 @@
     margin: 0;
     padding: 0;
 }
-
+div#welcome_alert {
+    border: 1px solid red;
+    background-color: #f7d5d2;
+    color: red;
+    text-align: center;
+}
 .success {
     border: 1px solid green;
     background-color: #d1f9da;
