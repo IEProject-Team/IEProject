@@ -1,7 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-<h4 style="text-align: center; width:100%; background-color:#a21b24; color:white; padding:2%;"> <i><b>Your information <br></b> id : {{auth()->user()->id}} , first name : {{auth()->user()->first_name}} , email : {{auth()->user()->email}} </i></h4>
+<h4 style="text-align: center; width:100%; background-color:#a21b24; color:white; padding:2%;"> <i><b>Your information
+            <br></b> id : {{auth()->user()->id}} , first name : {{auth()->user()->first_name}} , email :
+        {{auth()->user()->email}} </i></h4>
 <hr>
 @include('includes.dashboardNavigation')
 @include('includes.message-block')
@@ -44,5 +46,24 @@
         @endforeach
     </div>
 </section>
+
+<div class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Edit Post</h4>
+            </div>
+            <div class="modal-body">
+                <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 @endsection
