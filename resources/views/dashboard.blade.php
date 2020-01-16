@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<h4 style="text-align: center; width:100%; background-color:#a21b24; color:white; padding:2%;"> <i><b>Your information <br></b> id : {{auth()->user()->id}} , first name : {{auth()->user()->first_name}} , email : {{auth()->user()->email}} </i></h4>
+<h4 style="text-align: center; width:100%; background-color:#a21b24; color:white; padding:2%;"> <i><b>Your information <br></b> ID : {{auth()->user()->id}} , First Name : {{auth()->user()->first_name}} , Email : {{auth()->user()->email}} </i></h4>
 <hr>
 @include('includes.dashboardNavigation')
 @include('includes.message-block')
@@ -21,7 +21,7 @@
     </div>
 </section>
 <section class="row posts">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-12 col-md-offset-3">
         <header>
             <h5>Yours and others posts</h5>
         </header>
@@ -29,7 +29,7 @@
         <article class="post">
             <p>{{ $post->body }}</p>
             <div class="info">
-                Posted by {{ $post->user->first_name}} on {{ $post->created_at}}
+                Posted by {{ $post->user->first_name}} ( ID: {{ $post->user->id}} ) on {{ $post->created_at}}
             </div>
             <div class="interaction">
                 <a href="#">Like</a> |
