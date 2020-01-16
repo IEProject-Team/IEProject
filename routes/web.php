@@ -62,4 +62,10 @@ Route::get('/delete-post/{post_id}', [
     'middleware' => 'auth'
 ]);
 
+Route::post('/follow', [
+    'uses' => 'FollowController@postFollowUser',
+    'as' => 'follow'
+]);
+
+
 ?>
