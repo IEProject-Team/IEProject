@@ -1,5 +1,5 @@
 var postId = 0;
-
+var postBodyElement = null;
 $(document).on('click', '#edt', function(event) {
         event.preventDefault();
 

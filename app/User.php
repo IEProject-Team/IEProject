@@ -20,6 +20,9 @@ class User extends Model implements Authenticatable{
         public function getEmail() {
                 return $this->email;
         }
+        public function likes(){
+                return $this->hasMany('App\Like');
+        }
 }
 
 ?>
