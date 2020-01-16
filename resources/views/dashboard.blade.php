@@ -1,7 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-<h4 style="text-align: center; width:100%; background-color:#a21b24; color:white; padding:2%;"> <i><b>Your information <br></b> ID : {{auth()->user()->id}} , First Name : {{auth()->user()->first_name}} , Email : {{auth()->user()->email}} </i></h4>
+<h4 style="text-align: center; width:100%; background-color:#a21b24; color:white; padding:2%;"> <i><b>Your information
+            <br></b> ID : {{auth()->user()->id}} , First Name : {{auth()->user()->first_name}} , Email :
+        {{auth()->user()->email}} </i></h4>
 <hr>
 @include('includes.dashboardNavigation')
 @include('includes.message-block')
@@ -26,7 +28,7 @@
             <h5>Yours and others posts</h5>
         </header>
         @foreach($posts as $post)
-        <article class="post">
+        <article class="post" data-postid="{{ $post->id }}">
             <p>{{ $post->body }}</p>
             <div class="info">
                 Posted by {{ $post->user->first_name}} ( ID : {{ $post->user->id}}) on {{ $post->created_at}}
@@ -45,20 +47,31 @@
     </div>
 </section>
 <div class="modal fade" tabindex="-1" role="dialog" id="edit-modal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Edit Post</h4>
-      </div>
-      <div class="modal-body">
-        <p>One fine body&hellip;</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Edit Post</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="post-body">Edit the post</label>
+                        <textarea class="form-control" name="post-body" id="post-body" rows="5"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="modal-save">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<script>
+var token = '{{ Session::token() }}';
+var url = '{{ route('edit')}}';
+</script>
 @endsection
