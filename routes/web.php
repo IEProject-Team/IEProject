@@ -72,4 +72,8 @@ Route::post('/edit', function(\Illuminate\Http\Request $request) {
     */
 })->name('edit');
 
+Route::post('/like',[
+    'uses' => 'PostController@postLikePost',
+    'as' => 'like'
+]);
 ?>
