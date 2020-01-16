@@ -5,7 +5,7 @@ use App\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as cn;
-
+use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
     public function getDashboard(){
