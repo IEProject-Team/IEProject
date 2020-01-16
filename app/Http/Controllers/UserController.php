@@ -43,4 +43,10 @@ class UserController extends Controller{
             return redirect()->route('home')->with(['message' =>'Sign in info is incorrect ! ']);
         }
     }
+
+    public function getLogout()
+    {
+      Auth::logout(); 
+      return redirect()->route('home');
+    }
 }
