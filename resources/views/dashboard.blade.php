@@ -43,4 +43,23 @@
     </div>
 </section>
 
+<div class="modal hide fade" id="edit-modal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Edit Post</h3>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="post-body">Edit the post</label>
+                <textarea class="form-control" name="post-body" id="post-body" rows="5"></textarea>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn">Close</a>
+        <a href="#" class="btn btn-primary">Save changes</a>
+    </div>
+</div>
+
 @endsection
