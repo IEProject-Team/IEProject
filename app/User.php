@@ -10,6 +10,16 @@ class User extends Model implements Authenticatable{
         {
              return $this->hasMany('app\Post');
         }
+
+        public function getID() {
+                return $this->id;
+        }
+        public function getFirstName() {
+                return $this->first_name;
+        }
+        public function getEmail() {
+                return $this->email;
+        }
 }
 
 ?>
