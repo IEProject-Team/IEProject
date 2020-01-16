@@ -1,10 +1,6 @@
 var postId = 0;
 
-$(".post")
-    .find(".interaction")
-    .find("a")
-    .eq(2)
-    .on("click", function(event) {
+$(document).on('click', '#edt', function(event) {
         event.preventDefault();
 
         var postBody =
