@@ -1,3 +1,3 @@
-$('.post').find('.interaction').find('a').eq(2).on('click', function(){
+$(document).on('click', '#edt', function(){
     $('#edit-modal').modal();
 });
