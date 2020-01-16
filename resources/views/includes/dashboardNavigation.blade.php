@@ -3,6 +3,7 @@
     <form class="form-inline" action="{{ route('logout')}}">
         <button class="btn btn-primary" type="submit">Logout</button>
     </form>
+    
     <form class="form-inline" action="{{route('search.results')}}">
         <button class="btn btn-primary" type="submit">Friends</button>
     </form>
