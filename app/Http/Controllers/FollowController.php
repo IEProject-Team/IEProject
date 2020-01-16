@@ -11,7 +11,6 @@ class FollowController extends Controller
 {
     public function postFollowUser(Request $request){
         $following_id = $request['followingId'];
-        $is_friend = $request['isFriend'] === 'true';
 
         $folowing = User::find($following_id);
         if(!$folowing){

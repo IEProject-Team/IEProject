@@ -15,6 +15,8 @@
         <form class="form-inline" action="{{route('search.results')}}">
             <input class="form-control mr-sm-2" name="search_query" type="text" placeholder="Find People (email/id)">
             <button class="btn btn-primary" type="submit">Search</button>
+            <input type="hidden" value="{{ Session::token() }}" name="_token">
+
         </form>
     </div>
 </nav>

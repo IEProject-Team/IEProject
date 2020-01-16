@@ -1,3 +1,4 @@
+
 <div class="media">
   <div class="media-body">
   <br>
@@ -5,12 +6,15 @@
     <h5 class="Media-heading">First Name : <a href="#">{{$search_result->getFirstName()}}</a></h5>
     <h5 class="Media-heading">Email : <a href="#">{{$search_result->getEmail()}}</a></h5>
     <form class="form-inline" action="">
-      <button class="btn btn-primary btn-block" id="btnfollow" type="submit" >Follow/Unfollow</button>
+     <p hidden> {{ $search_result->getID() }} </p> 
+     <button class="btn btn-primary btn-block" id="btnfollow" type="submit" >Follow/Unfollow</button>
+
     </form>
     <hr>
    </div>
-   <script>
-  var followingId = $search_result;
-</script>
-
+    <script>
+      var token = '{{ Session::token()}}';
+      var urlFollow = '{{ route('follow')}}';
+    </script>
 </div>
+

@@ -41,10 +41,7 @@
         </article>
         @endforeach
     </div>
+
 </section>
-<script>
-var token = '{{ Session::token() }}';
-var urlFollow = "{{ route('follow') }}";
-</script>
 
 @endsection

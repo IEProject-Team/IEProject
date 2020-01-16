@@ -14,4 +14,8 @@
         </div>
     </div>
     @endif
+    <script>
+        var token = '{{Session::token()}}';
+        var url = "{{route('follow')}}";
+    </script>
 @endsection
