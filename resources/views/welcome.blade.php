@@ -7,9 +7,9 @@ social network...
 
 @section('content')
 @include('includes.message-block')
-@if (session('message'))
-<div class="alert alert-danger">
-    {{ session('message') }}
+@if (session('error'))
+<div class="alert alert-danger" id="welcome_alert">
+    {{ session('error') }}
 </div>
 @endif
 <div class="row">
