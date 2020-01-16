@@ -1,12 +1,14 @@
 @extends('layouts.master')
 
 @section('content')
+<h4 style="text-align: center; width:100%; background-color:#a21b24; color:white; padding:2%;"> <i><b>Your information <br></b> id : {{auth()->user()->id}} , first name : {{auth()->user()->first_name}} , email : {{auth()->user()->email}} </i></h4>
+<hr>
 @include('includes.dashboardNavigation')
 @include('includes.message-block')
 <section class="row new-post">
     <div class="col-md-12 col-md-offset-3">
         <header>
-            <h3>What do you have to say ?!</h3>
+            <h5>What do you have to say ?!</h5>
         </header>
         <form action="{{ route('post.create')}}" method="post">
             <div class="form-group">
@@ -21,7 +23,7 @@
 <section class="row posts">
     <div class="col-md-6 col-md-offset-3">
         <header>
-            <h3>Yours and others posts</h3>
+            <h5>Yours and others posts</h5>
         </header>
         @foreach($posts as $post)
         <article class="post">
