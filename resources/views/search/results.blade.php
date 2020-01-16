@@ -1,7 +1,7 @@
 @extends('.layouts.master')
 
 @section('content')
-    <h4><i>Your search results for "{{ Request::input('search_query')}}" (email or id): </i></h4>
+    <h4><i>Your search results for "{{ Request::input('search_query')}}" (Email or Id): </i></h4>
     @if(!$search_results->count())
         <p>No results found, sorry:(</p>
     @else
