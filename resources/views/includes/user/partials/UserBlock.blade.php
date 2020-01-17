@@ -7,7 +7,8 @@
     <form class="form-inline" action="{{route('following')}}" method="post">
             <button type="submit" class="btn btn-primary btn-block">
             <?php
-              $check = App\Follower::where('following_id','LIKE',$search_result->getID())->first();
+              $check = App\Follower::where('following_id','LIKE',$search_result->getID())->
+              where('user_id','LIKE',Illuminate\Support\Facades\Auth::user()->id)->first();
               if(is_null($check)){
                 ?>
                 Follow
