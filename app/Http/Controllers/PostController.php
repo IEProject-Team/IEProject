@@ -37,6 +37,7 @@ class PostController extends Controller
         $post->delete();
         return redirect()->route('dashboard')->with(['message' => 'The post successfully deleted!']);
     }
+
     public function postLikePost(Request $request){
         $post_id = $request['postId'];
         $is_like = $request['isLike']==='true';
@@ -67,6 +68,20 @@ class PostController extends Controller
             $like->save();
         }
         return null;
+}
+
+    public function postEditPost(Request $request)
+    {
+        $this->validate($request, [
+            'body' => 'required'
+        ]);
+        $post= Post::find($request['postId']);
+        if(Auth::user() != $post->user){
+            return redirect()->back();
+        }
+        $post->body = $request['body'];
+        $post->update();
+        return response()->json(['new_body' => $post->body], 200);
     }
 }
   
