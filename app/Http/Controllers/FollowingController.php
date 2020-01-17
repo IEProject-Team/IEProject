@@ -76,6 +76,11 @@ class FollowingController extends Controller
             }else{
                 $follow->isFriend = true;
                 $follow->update();
+                $new_follow = new Follower();
+                $new_follow->isFriend = true;
+                $new_follow->user_id = $user->id;
+                $new_follow->following_id = $follower_id;
+                $new_follow->save();
                 return back();
             }
         }
