@@ -13,10 +13,10 @@ class FollowingController extends Controller
         $allUsers = User::all();
         return view('userfriends', compact('allUsers'));
     }
-    public function following($id){
+    public function following(Request $request){
         $follow = New Follower;
         $follow->user_id = Auth::user()->id;
-        $follow->following_id = $id;
+        $follow->following_id = $request['id'];
         $follow->isFriend = false;
         $follow->save();
         return back();
