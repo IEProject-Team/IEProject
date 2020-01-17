@@ -92,8 +92,21 @@ Route::post('/following', [
     'middleware' => 'auth'
 ]);
 
+Route::post('/acceptFriend', [
+    'uses'=> 'FollowingController@acceptFriend',
+    'as' => 'acceptFriend',
+    'middleware' => 'auth'
+]);
+
+Route::post('/rejectFriend', [
+    'uses'=> 'FollowingController@rejectFriend',
+    'as' => 'rejectFriend',
+    'middleware' => 'auth'
+]);
+
 Route::get('/getbackdashboard',[
     'uses' => 'UserController@getBackDashboard',
     'as' => 'getbackdashboard'
 ]);
+
 ?>

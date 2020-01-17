@@ -31,7 +31,6 @@ class FollowingController extends Controller
         if($following_id == $user->id){     
             return back();
         }
-        // a boolean varaible below
         $follow = $user->follows()->where('following_id', $following_id)->first();
         //if already follow that one
         if($follow){
@@ -55,5 +54,56 @@ class FollowingController extends Controller
         $follow->save();
         return back();
     }
+
+
+    public function acceptFriend(Request $request){
+        
+        $follower_id = $request['id'];
+        $follower = User::find($follower_id);
+        if(!$follower){
+            return back();
+        }
+        $user = Auth::user();
+        $user_id = $user->id;
+
+        $follow = $follower->follows()->where('following_id', $user_id)->first();
+        //if already follow that one
+        if($follow){
+            // now we check if friend or just follow
+            $already_friend = $follow->isFriend;
+            if($already_friend == true){
+                return back();
+            }else{
+                $follow->isFriend = true;
+                $follow->update();
+                return back();
+            }
+        }
+        return back();
+    }
+
+    public function rejectFriend(Request $request){
+        
+        $follower_id = $request['id'];
+        $follower = User::find($follower_id);
+        if(!$follower){
+            return back();
+        }
+        $user = Auth::user();
+        $user_id = $user->id;
+
+        $follow = $follower->follows()->where('following_id', $user_id)->first();
+        //if already follow that one
+        if($follow){
+
+            $follow->delete();
+            return back();
+            
+        }
+        return back();
+    }
+    
 }
+
+ 
 ?>
