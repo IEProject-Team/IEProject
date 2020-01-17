@@ -13,4 +13,13 @@ class Follower extends Model
     public function following(){
         return $this->belongsTo('App\User');
     }
+    public function getID() {
+        return $this->id;
+    }
+    public function getFollowingId() {
+        return $this->following_id;
+    }
+    public function getUserId() {
+        return $this->user_id;
+    }
 }
