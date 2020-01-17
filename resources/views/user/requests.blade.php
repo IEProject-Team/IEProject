@@ -4,9 +4,9 @@
     <h4><i>Your Requests : </i></h4>
     @if(!$user_requests->count())
         <p>You don't have any Request, sorry:(</p>
-        <form class="form-inline" action="{{ route('getbackdashboard')}}">
+        <!--<form class="form-inline" action="{{ route('getbackdashboard')}}">
              <button class="btn btn-dark btn-block" type="submit">Back</button>
-        </form>
+        </form> -->
     @else
     <div class="row">
         <div class="col-md-12">
