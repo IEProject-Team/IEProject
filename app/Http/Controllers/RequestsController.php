@@ -14,7 +14,7 @@ class RequestsController extends Controller{
     public function getResults(){
 
         $user_requests = Follower::where('following_id','=', Auth::user()->id)
-          ->get();
+        ->where('isFriend','LIKE',false)->get();
       
         return view('user.requests')->with('user_requests', $user_requests);
     }
