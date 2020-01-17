@@ -1,7 +1,7 @@
 <nav class="navbar navbar-white bg-white justify-content-between">
 
     <form class="form-inline" action="{{ route('logout')}}">
-        <button class="btn btn-primary" type="submit">Logout</button>
+        <button class="btn btn-dark" type="submit">Logout</button>
     </form>
     
     <form class="form-inline" action="{{route('user.friends')}}">

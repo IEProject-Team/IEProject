@@ -103,4 +103,10 @@ Route::post('/rejectFriend', [
     'as' => 'rejectFriend',
     'middleware' => 'auth'
 ]);
+
+Route::get('/getbackdashboard',[
+    'uses' => 'UserController@getBackDashboard',
+    'as' => 'getbackdashboard'
+]);
+
 ?>
