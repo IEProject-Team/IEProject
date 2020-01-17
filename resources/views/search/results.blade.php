@@ -5,7 +5,7 @@
     @if(!$search_results->count())
         <p>No results found, sorry:(</p>
     @elseif($search_results->count()==1 && $search_results[0]->getID() == Auth::user()->id)
-        <p>No results found, sorry:(</p>
+        <p>You!!</p>
     @else
     <div class="row">
         <div class="col-md-12">
@@ -18,4 +18,11 @@
         </div>
     </div>
     @endif
+    <div class="row">
+        <div class="col-md-12">
+             <form class="form-inline" action="{{ route('getbackdashboard')}}">
+                   <button class="btn btn-dark btn-block" type="submit">Back</button>
+             </form>
+         </div>
+    </div>
 @endsection

@@ -49,4 +49,9 @@ class UserController extends Controller{
       Auth::logout(); 
       return redirect()->route('home');
     }
+
+    public function getBackDashboard()
+    {
+      return redirect()->route('dashboard');
+    }
 }
