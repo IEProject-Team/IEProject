@@ -72,4 +72,16 @@ Route::post('/like',[
     'uses' => 'PostController@postLikePost',
     'as' => 'like'
 ]);
+
+Route::get('/friends', [
+    'uses' => 'FriendsController@getResults',
+    'as' => 'user.friends',
+    'middleware' => 'auth'
+]);
+
+Route::get('/requests', [
+    'uses' => 'RequestsController@getResults',
+    'as' => 'user.requests',
+    'middleware' => 'auth'
+]);
 ?>

@@ -4,11 +4,11 @@
         <button class="btn btn-primary" type="submit">Logout</button>
     </form>
     
-    <form class="form-inline" action="{{route('search.results')}}">
+    <form class="form-inline" action="{{route('user.friends')}}">
         <button class="btn btn-primary" type="submit">Friends</button>
     </form>
 
-    <form class="form-inline" action="{{route('search.results')}}">
+    <form class="form-inline" action="{{route('user.requests')}}">
         <button class="btn btn-primary" type="submit">Requests</button>
     </form>
 
