@@ -16,7 +16,7 @@ class FollowingController extends Controller
     public function following($id){
         $follow = New Follower;
         $follow->user_id = Auth::user()->id;
-        $follow->follow_id = $id;
+        $follow->following_id = $id;
         $follow->isFriend = false;
         $follow->save();
         return back();
