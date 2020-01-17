@@ -22,12 +22,15 @@ class FollowingController extends Controller
         $follow->save();
         return back();*/
         $following_id = $request['id'];
-
         $folowing = User::find($following_id);
         if(!$folowing){
             return back();
         }
         $user = Auth::user();
+        // check user does not follow self
+        if($following_id == $user->id){     
+            return back();
+        }
         // a boolean varaible below
         $follow = $user->follows()->where('following_id', $following_id)->first();
         //if already follow that one
@@ -53,3 +56,4 @@ class FollowingController extends Controller
         return back();
     }
 }
+?>
