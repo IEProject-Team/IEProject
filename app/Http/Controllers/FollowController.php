@@ -42,13 +42,6 @@ class FollowController extends Controller
         return null;
 
     }
-    public function follwUserRequest(Request $request){
-
-
-        $user = User::find($request->user_id);
-        $response = auth()->user()->toggleFollow($user);
-
-
-        return response()->json(['success'=>$response]);
-    }
+    
+   
 }

@@ -10,12 +10,14 @@ class SearchController extends Controller{
     public function getResults(Request $request){
             
         $search_query = $request->input('search_query');
+        $token = $request->input('token');
+        
         if(!$search_query)
             return redirect()->route('dashboard');
         $search_results = User::where('email','LIKE', "%{$search_query}%")
           ->orWhere('id','LIKE',"%{$search_query}%")
           ->get();
           
-        return view('search.results')->with('search_results', $search_results);
+        return view('search.results')->with('search_results', $search_results, 'token',$token);
     }
 }

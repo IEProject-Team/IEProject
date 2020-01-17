@@ -65,7 +65,7 @@ Route::get('/delete-post/{post_id}', [
 
 Route::post('/follow', [
     'uses' => 'FollowController@postFollowUser',
-    'as' => 'follow'
+    'as' => 'following'
 ]);
 
 ?>
