@@ -14,4 +14,11 @@
         </div>
     </div>
     @endif
+    <div class="row">
+        <div class="col-md-12">
+             <form class="form-inline" action="{{ route('getbackdashboard')}}">
+                   <button class="btn btn-dark btn-block" type="submit">Back</button>
+             </form>
+         </div>
+    </div>
 @endsection
