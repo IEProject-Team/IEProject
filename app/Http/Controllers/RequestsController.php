@@ -3,16 +3,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Follower;
+use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller as cn;
+use Illuminate\Support\Facades\Auth;
 use DB;
   
 class RequestsController extends Controller{
     
     public function getResults(){
-        /* bayad takmil bshe*/
-        $user_requests = User::where('id','LIKE', "8")
-          ->orWhere('id','LIKE',"9")
-          ->get();
 
+        $user_requests = Follower::where('following_id','=', Auth::user()->id)
+        ->where('isFriend','LIKE',false)->get();
+      
         return view('user.requests')->with('user_requests', $user_requests);
     }
 }
