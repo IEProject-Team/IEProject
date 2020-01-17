@@ -5,7 +5,7 @@
     <h5 class="Media-heading">First Name : <a href="#">{{$search_result->getFirstName()}}</a></h5>
     <h5 class="Media-heading">Email : <a href="#">{{$search_result->getEmail()}}</a></h5>
     <form class="form-inline" action="#">
-      <button class="btn btn-primary btn-block" type="submit">Follow</button>
+      <a href="{{route('following', $search_result->getID())}}" class="btn btn-success" >Follow</a>
     </form>
     <hr>
    </div>

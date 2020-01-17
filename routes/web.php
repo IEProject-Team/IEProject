@@ -84,4 +84,6 @@ Route::get('/requests', [
     'as' => 'user.requests',
     'middleware' => 'auth'
 ]);
+
+Route::get('/following/{id}', 'FollowingController@following')->name('following');
 ?>

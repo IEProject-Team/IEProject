@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use App\Follower;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller as cn;
+use Illuminate\Support\Facades\Auth;
 
 class FollowingController extends Controller
 {
@@ -14,6 +17,7 @@ class FollowingController extends Controller
         $follow = New Follower;
         $follow->user_id = Auth::user()->id;
         $follow->follow_id = $id;
+        $follow->isFriend = false;
         $follow->save();
         return back();
     }
