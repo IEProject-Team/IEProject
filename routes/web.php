@@ -91,4 +91,16 @@ Route::post('/following', [
     'as' => 'following',
     'middleware' => 'auth'
 ]);
+
+Route::post('/acceptFriend', [
+    'uses'=> 'FollowingController@acceptFriend',
+    'as' => 'acceptFriend',
+    'middleware' => 'auth'
+]);
+
+Route::post('/rejectFriend', [
+    'uses'=> 'FollowingController@rejectFriend',
+    'as' => 'rejectFriend',
+    'middleware' => 'auth'
+]);
 ?>

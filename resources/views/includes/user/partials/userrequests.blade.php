@@ -9,12 +9,12 @@
     <h5 class="Media-heading">Email : <a href="#">{{$user->email}}</a></h5>
     <form class="form-inline" action="{{route('acceptFriend')}}" method="post">
       <button class="btn btn-success btn-block" type="submit">Accept</button>
-      <input type="hidden" value="{{$search_result->getID()}}" name="id">
+      <input type="hidden" value="{{$user->id}}" name="id">
       <input type="hidden" value="{{ Session::token() }}" name="_token">
     </form>
     <form class="form-inline" action="{{route('rejectFriend')}}" method="post">
       <button class="btn btn-danger btn-block" type="submit">Reject</button>
-      <input type="hidden" value="{{$search_result->getID()}}" name="id">
+      <input type="hidden" value="{{$user->id}}" name="id">
       <input type="hidden" value="{{ Session::token() }}" name="_token">
     </form>
     <hr>
