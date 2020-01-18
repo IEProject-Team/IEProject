@@ -33,7 +33,7 @@
             if(auth()->user() == $post->user){
                 $condition = true;
             }
-            $user_friends = App\Follower::where('following_id','=', auth()->user()->id)
+            $user_friends = App\Follower::where('following_id','LIKE', auth()->user()->id)
             ->where('isFriend','LIKE',true)->get();
         ?>
         @foreach($user_friends as $user_friend)
