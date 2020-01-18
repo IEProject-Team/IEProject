@@ -22,8 +22,8 @@ class FollowingController extends Controller
         $follow->save();
         return back();*/
         $following_id = $request['id'];
-        $folowing = User::find($following_id);
-        if(!$folowing){
+        $following = User::find($following_id);
+        if(!$following){
             return back();
         }
         $user = Auth::user();
@@ -38,6 +38,8 @@ class FollowingController extends Controller
             $already_friend = $follow->isFriend;
             if($already_friend == true){
                 $follow->delete();
+                $new_follow = $following->follows()->where('following_id', $user->id)->first();
+                $new_follow->delete();
                 return back();
             }else{
                 $follow->delete();
