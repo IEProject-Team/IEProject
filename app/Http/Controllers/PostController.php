@@ -10,8 +10,10 @@ use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
     public function getDashboard(){
+
         $posts = Post::orderBy('created_at', 'desc')->get(); 
         //$posts = Post::where('user_id',auth()->user()->id)->orderBy('created_at', 'desc')->get();
+
         return view('dashboard', ['posts' => $posts]);
     }
     
