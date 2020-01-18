@@ -4,9 +4,9 @@
         <button class="btn btn-dark" type="submit">Logout</button>
     </form>
 
-    <form class="form-inline" action="{{ route('profile')}}" method="post">
+    <form class="form-inline" action="{{ route('profile')}}" method="get">
         <button class="btn btn-success" type="submit">Edit profile</button>
-        <input type="hidden" value="{{ Session::token() }}" name="_token">
+        
     </form>
     
     <form class="form-inline" action="{{route('user.friends')}}">

@@ -16,11 +16,13 @@
     <div class="col-md-12">
         <br>
         <h2 style="text-align:center">User " {{auth()->user()->first_name}} " profile info</h2>
+        <br>
+        <h4> Change each field you want to change</h2>
 
-        <form action="{{ route('signup') }}" method="post">
+        <form action="{{ route('changeEmail') }}" method="post">
             <div class="form-group">
                 <label for="email"> Your email </label>
-                <input class="form-control" type="text" name="email" id="email">
+                <input class="form-control" type="text" name="email" id="email" placeholder="{{auth()->user()->email}}">
             </div>
             <button type="submit" class="btn btn-success btn-block">Submit new info </button>
             <input type="hidden" name="_token" value="{{Session :: token()}}">
@@ -28,11 +30,11 @@
         </form>
 
 
-        <form action="{{ route('signup') }}" method="post">
+        <form action="{{ route('changeName') }}" method="post">
            
             <div class="form-group">
                 <label for="first_name"> Your first name </label>
-                <input class="form-control" type="text" name="first_name" id="first_name">
+                <input class="form-control" type="text" name="first_name" id="first_name"  placeholder="{{auth()->user()->first_name}}">
             </div>
                 
             <button type="submit" class="btn btn-success btn-block">Submit new info </button>
@@ -40,17 +42,7 @@
             <br>
         </form>
 
-        <form action="{{ route('signup') }}" method="post">
-        
-            <div class="form-group">
-                <label for="password"> Your password </label>
-                <input class="form-control" type="password" name="password" id="password">
-            </div>
-
-            <button type="submit" class="btn btn-success btn-block">Submit new info </button>
-            <input type="hidden" name="_token" value="{{Session :: token()}}">
-            <br>
-        </form>
+       
     </div>
 
     <div class="col-md-12">
