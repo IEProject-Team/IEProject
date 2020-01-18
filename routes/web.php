@@ -109,4 +109,11 @@ Route::get('/getbackdashboard',[
     'as' => 'getbackdashboard'
 ]);
 
+
+Route::post('/profile', [
+    'uses'=> 'UserController@getToProfilePage',
+    'as' => 'profile',
+    'middleware' => 'auth'
+]);
+
 ?>

@@ -54,4 +54,8 @@ class UserController extends Controller{
     {
       return redirect()->route('dashboard');
     }
+
+    public function getToProfilePage(){
+        return view('user.profile')->with('search_results', $search_results);
+    }
 }

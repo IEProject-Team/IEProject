@@ -3,6 +3,10 @@
     <form class="form-inline" action="{{ route('logout')}}">
         <button class="btn btn-dark" type="submit">Logout</button>
     </form>
+
+    <form class="form-inline" action="{{ route('profile')}}" method="post">
+        <button class="btn btn-success" type="submit">Profile</button>
+    </form>
     
     <form class="form-inline" action="{{route('user.friends')}}">
         <button class="btn btn-primary" type="submit">Friends</button>
