@@ -28,6 +28,23 @@
             <h5>Yours and others posts</h5>
         </header>
         @foreach($posts as $post)
+        <?php
+            $condition = false;
+            if(auth()->user() == $post->user){
+                $condition = true;
+            }
+            $user_friends = App\Follower::where('following_id','LIKE', auth()->user()->id)
+            ->where('isFriend','LIKE',true)->get();
+        ?>
+        @foreach($user_friends as $user_friend)
+        <?php
+            $user = App\User::find($user_friend->getUserId());
+            if( $user->id == $post->user->id ){
+                $condition = true;
+            }
+        ?>
+        @endforeach
+        @if($condition)
         <article class="post" data-postid="{{ $post->id }}">
             <p>{{ $post->body }}</p>
             <div class="info">
@@ -46,6 +63,7 @@
                 @endif
             </div>
         </article>
+        @endif
         @endforeach
     </div>
 </section>
