@@ -56,6 +56,6 @@ class UserController extends Controller{
     }
 
     public function getToProfilePage(){
-        return view('user.profile')->with('search_results', $search_results);
+        return view('user.profile')->with('user_id', auth()->user()->id);
     }
 }
