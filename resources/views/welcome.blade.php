@@ -1,10 +1,5 @@
 @extends('.layouts.master')
 
-@section('title')
-
-social network...
-@endsection
-
 @section('content')
 @include('includes.message-block')
 @if (session('error'))

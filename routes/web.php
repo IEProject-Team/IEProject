@@ -12,8 +12,11 @@
 */
 
 Route::get('/', function () {
+    return view('start');
+});
+
+Route::get('/welcome', function () {
     return view('welcome');
-	
 })->name('home');
 
 Route::get('/user/{id}', function ($id) {
