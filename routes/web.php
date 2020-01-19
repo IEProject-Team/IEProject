@@ -112,4 +112,23 @@ Route::get('/getbackdashboard',[
     'as' => 'getbackdashboard'
 ]);
 
+
+Route::get('/profile', [
+    'uses'=> 'UserController@getToProfilePage',
+    'as' => 'profile',
+    'middleware' => 'auth'
+]);
+
+Route::post('/changeName', [
+    'uses'=> 'UserController@changeTheName',
+    'as' => 'changeName',
+    'middleware' => 'auth'
+]);
+
+Route::post('/changeEmail', [
+    'uses'=> 'UserController@changeTheEmail',
+    'as' => 'changeEmail',
+    'middleware' => 'auth'
+]);
+
 ?>
