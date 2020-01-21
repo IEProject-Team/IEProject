@@ -2,7 +2,7 @@
 
 @section('content')
 <div style="margin:15%;">
-    <h1 style="text-align:center;"><i> Welcome to <br><b style="color:#a21b24;"> RAM </b><br>social network <br><b style="color:#a21b24;"> ^_^ </b><br></i></h1>
+    <h1 style="text-align:center;"><i> Welcome to <br><b style="color:#a21b24;">Beta </b><br>social network <br><b style="color:#a21b24;"> ^_^ </b><br></i></h1>
     <br>
     <br>
     <form  action="{{ route('home') }}">
